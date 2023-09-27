@@ -19,6 +19,8 @@ async function bootstrap() {
     }),
   );
 
+  app.enableCors({ origin: process.env.ORIGIN || 'http://localhost:5173' });
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
