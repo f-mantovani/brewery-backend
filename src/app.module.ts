@@ -10,7 +10,10 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: `${process.cwd()}/config/env/${process.env.NODE_ENV}.env`,
+    }),
     BeersModule,
     MongooseModule.forRoot(process.env.MONGODB_URI_CONNECTION),
     MongooseModule.forFeature([{ name: 'Beer', schema: BeerSchema }]),
