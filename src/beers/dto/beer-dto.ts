@@ -10,7 +10,7 @@ import { PartialType } from '@nestjs/mapped-types';
 export class CreateBeerDto {
   @IsString()
   @IsOptional()
-  image?: string;
+  image_url?: string;
 
   @IsString()
   @IsNotEmpty()
