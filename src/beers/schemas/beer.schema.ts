@@ -6,7 +6,7 @@ export type BeerDocument = HydratedDocument<Beer>;
 @Schema()
 export class Beer {
   @Prop()
-  image: string;
+  image_url: string;
 
   @Prop({ required: true })
   name: string;
